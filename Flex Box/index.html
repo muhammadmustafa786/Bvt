@@ -1,0 +1,329 @@
+<!doctype html>
+<html>
+<head>
+	<!-- set the encoding of your site -->
+	<meta charset="utf-8">
+	<!-- set the viewport width and initial-scale on mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+	<title>Flex Box</title>
+	<!-- include the site stylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/all.css" media="all">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet"> 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" defer></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.12.4.min.js"><\/script>')</script>
+	<script type="text/javascript" src="js/jquery.custom.js" defer></script>
+</head>
+<body onLoad="pageLoad();">
+	<!-- main container of all the page elements -->
+	<div id="wrapper"> 
+		<!-- header of the page -->
+		<header id="header"> 
+			<h1>Flex Generator</h1>
+		</header>
+		<!-- contain main informative part of the site -->
+		<main id="main" role="main">
+			<div id="content">
+				<div class="flex-box">
+					<div class="column">Column 1</div>
+					<div class="column">Column 2</div>
+					<div class="column">Column 3</div>
+					<div class="column">Column 4</div>
+					<div class="column">Column 5</div>
+				</div>
+			</div>
+			<aside id="sidebar">
+				<a href="#" class="popup-opener"  data-target="#flex-prop">Flex Properties</a>
+				<div class="options">
+					<div class="custom-select" id="display-select">
+						<strong class="form-control">Flex</strong>
+						<ul class="list-unstyled">
+							<li><a href="#">Flex</a></li>
+							<li><a href="#">Inline Flex</a></li>
+						</ul>
+					</div>
+					<div class="box">
+						<h2>Flex Flow / Direction</h2>
+						<ul class="custom-radio">
+							<li><label><input type="radio" name="flex-flow" value="row" checked><span class="custom-input"></span>Row</label></li>
+							<li><label><input type="radio" name="flex-flow" value="row-reverse"><span class="custom-input"></span>Row Reverse</label></li>
+							<li><label><input type="radio" name="flex-flow" value="column"><span class="custom-input"></span>Column</label></li>
+							<li><label><input type="radio" name="flex-flow" value="column-reverse"><span class="custom-input"></span>Column Reverse</label></li>
+						</ul>
+						<ul class="custom-radio wraping">
+							<li><label><input type="radio" name="flex-wrap" value="wrap" checked><span class="custom-input"></span>Wrap</label></li>
+							<li><label><input type="radio" name="flex-wrap" value="nowrap"><span class="custom-input"></span>NoWrap</label></li>
+						</ul>
+					</div>
+					<div class="box">
+						<h2>Justify Content:</h2>
+						<ul class="custom-radio">
+							<li><label><input type="radio" name="justify-content" value="flex-start"><span class="custom-input"></span>Flex Start</label></li>
+							<li><label><input type="radio" name="justify-content" value="flex-end"><span class="custom-input"></span>flex-end</label></li>
+							<li><label><input type="radio" name="justify-content" value="center"><span class="custom-input"></span>Center</label></li>
+							<li><label><input type="radio" name="justify-content" value="space-evenly"><span class="custom-input"></span>space-evenly</label></li>
+							<li><label><input type="radio" name="justify-content" value="space-between"><span class="custom-input"></span>Space Between</label></li>
+							<li><label><input type="radio" name="justify-content"  value="space-around"><span class="custom-input"></span>Space Around</label></li>
+						</ul>
+						<a href="#" class="reset"><i class="icon-remove"></i></a>
+					</div>
+					<div class="box">
+						<h2>Align Items</h2>
+						<ul class="custom-radio">
+							<li><label><input type="radio" name="align-items" value="flex-start"><span class="custom-input"></span>Flex Start</label></li>
+							<li><label><input type="radio" name="align-items" value="flex-end"><span class="custom-input"></span>Flex End</label></li>
+							<li><label><input type="radio" name="align-items" value="center"><span class="custom-input"></span>Center</label></li>
+							<li><label><input type="radio" name="align-items" value="baseline"><span class="custom-input"></span>Baseline</label></li>
+							<li><label><input type="radio" name="align-items" value="stretch"><span class="custom-input"></span>Stretch</label></li>
+						</ul>
+						<a href="#" class="reset"><i class="icon-remove"></i></a>
+					</div>
+					<div class="box">
+						<h2>Align Content</h2>
+						<ul class="custom-radio">
+							<li><label><input type="radio" name="align-content" value="flex-start"><span class="custom-input"></span>Flex Start</label></li>
+							<li><label><input type="radio" name="align-content" value="flex-end"><span class="custom-input"></span>Flex End</label></li>
+							<li><label><input type="radio" name="align-content" value="center"><span class="custom-input"></span>Center</label></li>
+							<li><label><input type="radio" name="align-content" value="stretch"><span class="custom-input"></span>stretch</label></li>
+							<li><label><input type="radio" name="align-content" value="space-between"><span class="custom-input"></span>Space Between</label></li>
+							<li><label><input type="radio" name="align-content" value="space-around"><span class="custom-input"></span>Space Around</label></li>
+						</ul>
+						<a href="#" class="reset"><i class="icon-remove"></i></a>
+					</div>
+				</div>
+				<div class="code">
+					<pre id="copyText"></pre>
+					<a href="#" class="copy">Copy</a>
+				</div>
+			</aside>
+		</main>
+		<!-- footer of the page -->
+		<footer id="footer">
+			<p>Created by: <a href="skype:awais.ali.pk?chat">Awais Ali</a></p>
+		</footer>
+		<!-- popup -->
+		<a href="#" class="popup-overlay"></a>
+		<!-- reply popup -->
+		<div class="popup flex-prop" id="flex-prop">
+			<div class="box-holder">
+				<div class="box">
+					<a href="#" class="btn-colse popup-close">close</a>
+					<h2>Flex Properties</h2>
+					<ul class="tabset">
+						<li><a href="#flex-container">flex container</a></li>
+						<li><a href="#flex-items">flex items</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab" id="flex-container">
+							<h3>Properties for the Parent</h3>
+							<div class="flex-wrap">
+								<div class="prop-group">
+									<strong class="title">display</strong>
+									<div class="custom-select">
+										<strong class="form-control">Flex</strong>
+										<ul class="list-unstyled">
+											<li><a href="#">Flex</a></li>
+											<li><a href="#">Inline Flex</a></li>
+										</ul>
+									</div>
+									<code>result</code>
+								</div>
+								<div class="prop-group">
+									<strong class="title">flex-direction</strong>
+									<div class="custom-select">
+										<strong class="form-control">row</strong>
+										<ul class="list-unstyled">
+											<li><a href="#">row</a></li>
+											<li><a href="#">row-reverse</a></li>
+											<li><a href="#">column</a></li>
+											<li><a href="#">column-reverse</a></li>
+											<li><a href="#">initial</a></li>
+											<li><a href="#">unset</a></li>
+											<li><a href="#">inherit</a></li>
+										</ul>
+									</div>
+									<code>result</code>
+								</div>
+								<div class="prop-group">
+									<strong class="title">flex-wrap</strong>
+									<div class="custom-select">
+										<strong class="form-control">wrap</strong>
+										<ul class="list-unstyled">
+											<li><a href="#">wrap</a></li>
+											<li><a href="#">nowrap</a></li>
+											<li><a href="#">wrap-reverse</a></li>
+											<li><a href="#">initial</a></li>
+											<li><a href="#">unset</a></li>
+											<li><a href="#">inherit</a></li>
+										</ul>
+									</div>
+									<code>result</code>
+								</div>
+								<div class="prop-group">
+									<strong class="title">justify-content</strong>
+									<div class="custom-select">
+										<strong class="form-control">flex-start</strong>
+										<ul class="list-unstyled">
+											<li><a href="#">flex-start</a></li>
+											<li><a href="#">flex-end</a></li>
+											<li><a href="#">center</a></li>
+											<li><a href="#">space-evenly</a></li>
+											<li><a href="#">space-between</a></li>
+											<li><a href="#">space-around</a></li>
+											<li><a href="#">inherit</a></li>
+										</ul>
+									</div>
+									<code>result</code>
+								</div>
+								<div class="prop-group">
+									<strong class="title">align-items</strong>
+									<div class="custom-select bottom">
+										<strong class="form-control">flex-start</strong>
+										<ul class="list-unstyled">
+											<li><a href="#">flex-start</a></li>
+											<li><a href="#">flex-end</a></li>
+											<li><a href="#">center</a></li>
+											<li><a href="#">baseline</a></li>
+											<li><a href="#">stretch</a></li>
+											<li><a href="#">inherit</a></li>
+										</ul>
+									</div>
+									<code>result</code>
+								</div>
+								<div class="prop-group">
+									<strong class="title">align-content</strong>
+									<div class="custom-select bottom">
+										<strong class="form-control">wrap</strong>
+										<ul class="list-unstyled">
+											<li><a href="#">flex-start</a></li>
+											<li><a href="#">flex-end</a></li>
+											<li><a href="#">center</a></li>
+											<li><a href="#">stretch</a></li>
+											<li><a href="#">space-between</a></li>
+											<li><a href="#">space-around</a></li>
+											<li><a href="#">inherit</a></li>
+										</ul>
+									</div>
+									<code>result</code>
+								</div>
+							</div>
+						</div>
+						<div class="tab" id="flex-items">
+							<h3>Properties for the Children</h3>
+							<div class="flex-wrap">
+								<div class="prop-group">
+									<strong class="title">order</strong>
+									<div class="custom-select">
+										<strong class="form-control">1</strong>
+										<ul class="list-unstyled">
+											<li><a href="#">0</a></li>
+											<li><a href="#">1</a></li>
+											<li><a href="#">2</a></li>
+											<li><a href="#">3</a></li>
+											<li><a href="#">4</a></li>
+											<li><a href="#">5</a></li>
+											<li><a href="#">6</a></li>
+											<li><a href="#">7</a></li>
+											<li><a href="#">8</a></li>
+											<li><a href="#">9</a></li>
+											<li><a href="#">initial</a></li>
+											<li><a href="#">unset</a></li>
+											<li><a href="#">inherit</a></li>
+										</ul>
+									</div>
+									<code>result</code>
+								</div>
+								<div class="prop-group">
+									<strong class="title">flex-grow</strong>
+									<div class="custom-select">
+										<strong class="form-control">1</strong>
+										<ul class="list-unstyled">
+											<li><a href="#">1</a></li>
+											<li><a href="#">initial</a></li>
+											<li><a href="#">unset</a></li>
+											<li><a href="#">inherit</a></li>
+										</ul>
+									</div>
+									<code>result</code>
+								</div>
+								<div class="prop-group">
+									<strong class="title">flex-shrink</strong>
+									<div class="custom-select">
+										<strong class="form-control">0</strong>
+										<ul class="list-unstyled">
+											<li><a href="#">0</a></li>
+											<li><a href="#">initial</a></li>
+											<li><a href="#">unset</a></li>
+											<li><a href="#">inherit</a></li>
+										</ul>
+									</div>
+									<code>result</code>
+								</div>
+								<div class="prop-group">
+									<strong class="title">flex-basis</strong>
+									<div class="custom-select">
+										<strong class="form-control">50%</strong>
+										<ul class="list-unstyled">
+											<li><a href="#">0</a></li>
+											<li><a href="#">25%</a></li>
+											<li><a href="#">50%</a></li>
+											<li><a href="#">75%</a></li>
+											<li><a href="#">100px</a></li>
+											<li><a href="#">200px</a></li>
+											<li><a href="#">300px</a></li>
+										</ul>
+									</div>
+									<code>result</code>
+								</div>
+								<div class="prop-group">
+									<strong class="title">align-self</strong>
+									<div class="custom-select bottom">
+										<strong class="form-control">center</strong>
+										<ul class="list-unstyled">
+											<li><a href="#">auto</a></li>
+											<li><a href="#">flex-start</a></li>
+											<li><a href="#">flex-end</a></li>
+											<li><a href="#">center</a></li>
+											<li><a href="#">stretch</a></li>
+											<li><a href="#">baseline</a></li>
+											<li><a href="#">last-baseline</a></li>
+											<li><a href="#">left</a></li>
+											<li><a href="#">right</a></li>
+											<li><a href="#">normal</a></li>
+											<li><a href="#">initial</a></li>
+											<li><a href="#">unset</a></li>
+											<li><a href="#">inherit</a></li>
+										</ul>
+									</div>
+									<code>result</code>
+								</div>
+								<div class="prop-group">
+									<strong class="title">justify-self</strong>
+									<div class="custom-select bottom" id="select6">
+										<strong class="form-control">center</strong>
+										<ul class="list-unstyled">
+											<li><a href="#">auto</a></li>
+											<li><a href="#">flex-start</a></li>
+											<li><a href="#">flex-end</a></li>
+											<li><a href="#">center</a></li>
+											<li><a href="#">stretch</a></li>
+											<li><a href="#">baseline</a></li>
+											<li><a href="#">last-baseline</a></li>
+											<li><a href="#">left</a></li>
+											<li><a href="#">right</a></li>
+											<li><a href="#">normal</a></li>
+											<li><a href="#">initial</a></li>
+											<li><a href="#">unset</a></li>
+											<li><a href="#">inherit</a></li>
+										</ul>
+									</div>
+									<code>result</code>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
